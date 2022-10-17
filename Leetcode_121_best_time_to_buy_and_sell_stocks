@@ -1,0 +1,24 @@
+prices = [7,1,5,3,6,4]
+
+#Bruteforce
+max_profit = 0
+for i in range(len(prices)):
+    j = i +1
+    while j < len(prices):
+        profit = prices[j] - prices[i]
+        max_profit = max(max_profit, profit)
+        j +=1
+print(max_profit)
+#time complexity: O(n2)
+#space complexity: O(1)
+
+#Optimized
+max_profit = 0
+min_so_far = prices[0]
+for n in prices:
+    min_so_far = min(n, min_so_far)
+    profit = n - min_so_far
+    max_profit = max(max_profit, profit)
+print(max_profit)
+#time complexity: O(n)
+#space complexity: O(1)
