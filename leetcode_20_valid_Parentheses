@@ -1,0 +1,16 @@
+
+stack = []
+d = {
+    '}':'{',
+    ']':'[',
+    ')':'('
+    }
+ for para in s:
+    if para not in d:
+      #it's opening bracket
+      stack.append(para)
+    elif stack and d[para] == stack[-1]:
+      stack.pop()
+    else:
+      return False
+ return True
